@@ -27,7 +27,7 @@ Route::group([ //basicamente assim fica menos verboso
     }); 
     
     Route::get('/users', function() { 
-        return "users";
+        return "users";  
     });
     
     Route::get('/cliente', function() { 
