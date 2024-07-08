@@ -14,7 +14,9 @@ use App\Http\Controllers\ProdutoController; //tem que usar o namespace
 |
 */
 
-Route::get('/', [ProdutoController::class, 'index']); //pelo controller é assim
+Route::get('/', [ProdutoController::class, 'index'])->name('produto.index'); //pelo controller é assim
+
+Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
 
 // Route::get('/', function () {
 //     // return view('welcome');
