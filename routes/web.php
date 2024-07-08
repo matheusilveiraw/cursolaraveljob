@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController; //tem que usar o namespace 
+use App\Http\Controllers\ProdutoController2;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,15 @@ use App\Http\Controllers\ProdutoController; //tem que usar o namespace
 |
 */
 
-Route::get('/', [ProdutoController::class, 'index'])->name('produto.index'); //pelo controller é assim
+//Aula 16
 
-Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
+Route::resource('produtos', ProdutoController2::class);
+
+// Aula 15
+
+// Route::get('/', [ProdutoController::class, 'index'])->name('produto.index'); //pelo controller é assim
+
+// Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show');
 
 // Route::get('/', function () {
 //     // return view('welcome');
