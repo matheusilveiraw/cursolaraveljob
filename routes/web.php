@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController; //tem que usar o namespace 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return redirect()->route('admin.cliente');
-});
+Route::get('/', [ProdutoController::class, 'index']); //pelo controller é assim
+
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return redirect()->route('admin.cliente');
+// });
 
 Route::group([ //basicamente assim fica menos verboso 
     'prefix' => 'admin',
