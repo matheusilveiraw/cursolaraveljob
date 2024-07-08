@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 //php artisan make:controller ProdutoController2 --resource 
 //controller que já vem com metodos 
 
+//php route list comando: php artisan route:list
+//comando para ver todas as rotas 
+
 use Illuminate\Http\Request;
 
 class ProdutoController2 extends Controller
