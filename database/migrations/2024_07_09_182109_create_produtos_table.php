@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create("produtos", function(Blueprint $table){
             $table->id();
             $table->string('nome');
-            $table->dropColumn('descrição');
+            $table->text('descrição');
             $table->double('preco', 10, 2);
             $table->string('slug');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
 
             $table->unsignedBigInteger('id_user'); //chave estrangeira para o usuario
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
