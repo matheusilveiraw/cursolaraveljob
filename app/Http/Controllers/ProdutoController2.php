@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 //comando para ver todas as rotas 
 
 use Illuminate\Http\Request;
+use App\Models\Produto;
 
 class ProdutoController2 extends Controller
 {
@@ -17,7 +18,9 @@ class ProdutoController2 extends Controller
      */
     public function index()
     {
-        return 'index';
+        // return 'index';
+        $produtos = \App\Models\Produto::all();
+        return dd($produtos);
     }
 
     /**

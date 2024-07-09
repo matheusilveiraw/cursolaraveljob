@@ -12,7 +12,9 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
     public function index() { 
-        return 'index';
+        // return 'index';
+        $produtos = \App\Models\Produto::all();
+        return dd($produtos);
     }
 
     public function show($id = 900000) { 
