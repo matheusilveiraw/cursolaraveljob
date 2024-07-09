@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use Illuminate\Database\DBAL\TimestampType;
 
 //aula 18- alterei o nome do banco de dados para cursolaravel lá no arquivo .env
 
@@ -150,4 +151,9 @@ return [
 
     ],
 
+    'dbal' => [
+        'types' => [
+            'timestamp' => TimestampType::class,
+        ]
+    ]
 ];

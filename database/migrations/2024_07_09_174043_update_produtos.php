@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Grammars\RenameColumn;
 use Illuminate\Support\Facades\Schema;
-
-//para criar uma tabela configurada - php artisan make:migration create_produtos_table
 
 return new class extends Migration
 {
@@ -13,11 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produtos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomee');
-            $table->string('nomecompleto');
-            $table->timestamps();
+        Schema::table("produtos", function(Blueprint $table){
+            $table->renameColumn('nomee', 'nome');
+            $table->dropColumn('nomecompleto');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produtos');
+        //
     }
 };
