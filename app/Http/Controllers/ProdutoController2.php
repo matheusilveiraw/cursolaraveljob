@@ -19,8 +19,15 @@ class ProdutoController2 extends Controller
     public function index()
     {
         // return 'index';
-        $produtos = \App\Models\Produto::all();
-        return dd($produtos);
+        // $produtos = \App\Models\Produto::all();
+        // return dd($produtos);
+
+        $nome = 'João';
+        $idade = 25;
+        $html = '<h1>Isso é um titulo em HTML</h1>';
+
+        // return view('site/news', ['nome' => $nome, 'idade' => $idade, 'html' => $html]);
+        return view('site/news', compact('nome', 'idade', 'html'));
     }
 
     /**
