@@ -4,6 +4,10 @@
 
 @section('conteudo')
 
-    <h1>Essa é nossa home</h1>
+{{-- comentário, não aparece no código fonte --}}
+
+{{ isset($nome) ? 'existe' : 'não existe' }}
+
+{{$teste ?? 'padrão'}} {{-- ?? serve para dar um valor padrão para a variavel, que nesse caso não existe no controler --}}
 
 @endsection
