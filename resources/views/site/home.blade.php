@@ -64,5 +64,31 @@
     não tem usuário autenticado
 @endguest
 
+{{-- estruturas de repetição --}}
+
+
+{{-- for --}}
+
+@for ($i = 0; $i < 10; $i++)
+<br>valor atual é {{$i}}
+@endfor
+
+{{-- diretiva php para conseguir progrmar em pohp no blade --}}
+@php
+    $w = 0;
+@endphp
+
+{{-- while --}}
+
+@while ($w < 10)
+    <br>o valor é menor que 10
+    @php
+     $w++;   
+    @endphp
+@endwhile
+
+@foreach ($frutas as $fruta)
+    <br> {{ $fruta }}
+@endforeach
 
 @endsection
