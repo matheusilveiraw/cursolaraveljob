@@ -17,7 +17,8 @@
             <li><a href="###">Carrinho</a></li>
           </ul>
         </div>
-      </nav>
+    </nav>
+
 
       @yield('conteudo')
 
