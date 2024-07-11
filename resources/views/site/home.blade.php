@@ -7,7 +7,6 @@
 <div class="container">
     <div class="row">
         @foreach ($produtos as $produto)
-
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
@@ -20,9 +19,12 @@
                 </div>
             </div>    
         </div>
-
         @endforeach
     </div>
+</div>
+
+<div class="row center-align">
+    {{ $produtos->links('custom.pagination') }}
 </div>
 
 @endsection

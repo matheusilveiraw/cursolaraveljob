@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <nav class="red">
+    <nav>
         <div class="nav-wrapper container">
           <a href="#" class="brand-logo center">Curso Laravel </a>
           <ul id="nav-mobile" class="left">

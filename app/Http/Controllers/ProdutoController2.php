@@ -30,7 +30,7 @@ class ProdutoController2 extends Controller
         // return view('site/news', ['nome' => $nome, 'idade' => $idade, 'html' => $html]);
         // return view('site.home', compact('nome', 'idade', 'html', 'frutas'));
 
-        $produtos = Produto::all(); //tá importando todos os produtos do banco de dados aqui
+        $produtos = Produto::paginate(3); //tá importando todos os produtos do banco de dados aqui
 
         return view('site.home', compact('produtos'));
     }
