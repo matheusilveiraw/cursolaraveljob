@@ -91,4 +91,14 @@
     <br> {{ $fruta }}
 @endforeach
 
+
+@include('includes.mensagem', ['titulo' => 'Mensagem de sucesso!'])
+
+@component('componentes.sidebar') 
+    @slot('paragrafo')
+    Text qualquer vindo do slot
+        
+    @endslot
+@endcomponent
+
 @endsection
