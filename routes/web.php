@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController; //tem que usar o namespace 
 use App\Http\Controllers\ProdutoController2;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use App\Http\Controllers\ProdutoController2;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Aula 44
+
+Route::get('/', [SiteController::class, 'index'])->name('site.index'); 
 
 //Aula 16
 
