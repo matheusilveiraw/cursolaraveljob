@@ -16,6 +16,10 @@ use App\Http\Controllers\SiteController;
 |
 */
 
+//Aula 45
+
+Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('site.details'); 
+
 // Aula 44
 
 Route::get('/', [SiteController::class, 'index'])->name('site.index'); 
