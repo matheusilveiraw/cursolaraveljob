@@ -16,14 +16,14 @@ use App\Http\Controllers\SiteController;
 |
 */
 
-//Aula 48
+//Aula 48 - essa é para filtrar os produtos por categoria
 Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.categoria'); 
 
-//Aula 45
 
+//Aula 45 - essa é para quando abrir o produto, mostrar mais detalhes dele
 Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('site.details'); 
 
-// Aula 44
+// Aula 44 - essa rota é para mostrar tudo no index
 
 Route::get('/', [SiteController::class, 'index'])->name('site.index'); 
 
