@@ -8,6 +8,11 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      .badge.blue {
+          color: white !important;
+      }
+  </style>
 </head>
 
 <body>
@@ -27,7 +32,7 @@
                 </ul>
 
 
-                <li><a href="{{ route('site.carrinho') }}">Carrinho</a></li>
+                <li><a href="{{ route('site.carrinho') }}">Carrinho<span class="badge blue" data-badge-caption=""> {{ Cart::getContent()->count() }}</span> </a></li>
             </ul>
         </div>
     </nav>
