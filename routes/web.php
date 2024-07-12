@@ -16,6 +16,9 @@ use App\Http\Controllers\SiteController;
 |
 */
 
+//Aula 48
+Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.categoria'); 
+
 //Aula 45
 
 Route::get('/produto/{slug}', [SiteController::class, 'details'])->name('site.details'); 
