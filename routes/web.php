@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController; //tem que usar o namespace 
 use App\Http\Controllers\ProdutoController2;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\CarrinhoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,9 @@ use App\Http\Controllers\SiteController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//Aula 50 - rota do carrinho
+Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('site.carrinho'); 
 
 //Aula 48 - essa é para filtrar os produtos por categoria
 Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.categoria'); 
