@@ -36,9 +36,14 @@
                             <td><img src="{{$i->attributes->image}}" alt="" width="70" class="responsive-img circle"></td>
                             <td>{{$i->name}}</td>
                             <td>R$ {{number_format($i->price, 2, ',', '.')}}</td>
-                            <td><input style="width:40px;" class="white center font-weight:900;" type="number" value="{{$i->quantity}}" name="quantity"></td>
-                            <td>  
-                                <button class="btn-floating waves-effect waves-light orange"><i class="material-icons">refresh</i></button>
+
+                            <form action="{{route('site.atualizacarrinho')}}" method="POST">
+                                @csrf
+                                <td><input style="width:40px;" class="white center font-weight:900;" type="number" value="{{$i->quantity}}" name="quantity"></td>
+                                <td>  
+                                    <input type="hidden" name="id" value="{{$i->id}}">
+                                    <button class="btn-floating waves-effect waves-light orange"><i class="material-icons">refresh</i></button>
+                            </form>
 
                                 <form action="{{ route('site.removecarrinho') }}" method="POST">
                                     @csrf

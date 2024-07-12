@@ -17,6 +17,9 @@ use App\Http\Controllers\CarrinhoController;
 |
 */
 
+//aula 55 - atualizar carrinho
+Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('site.atualizacarrinho'); 
+
 //AULA 54 - delete carrinho 
 
 Route::post('/remover', [CarrinhoController::class, 'removeCarrinho'])->name('site.removecarrinho'); 
