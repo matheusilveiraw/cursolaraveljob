@@ -17,7 +17,10 @@ use App\Http\Controllers\CarrinhoController;
 |
 */
 
-//Aula 50 - rota do carrinho
+//Aula 51 - post do carrinho (adc o carrinho)
+Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('site.addcarrinho'); 
+
+//Aula 50 - rota do carrinho, para pegar os dados dele
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoLista'])->name('site.carrinho'); 
 
 //Aula 48 - essa é para filtrar os produtos por categoria
