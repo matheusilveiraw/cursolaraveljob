@@ -25,7 +25,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 //aula 60 - rota dasboartd
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware('auth');
 
 //aula 59 - rota do login
 Route::view('/login',  'login.form')->name('login.form'); 
