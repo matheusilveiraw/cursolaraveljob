@@ -5,7 +5,9 @@ use App\Http\Controllers\ProdutoController; //tem que usar o namespace
 use App\Http\Controllers\ProdutoController2;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,10 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//aula 60 - rota dasboartd
+
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
 //aula 59 - rota do login
 Route::view('/login',  'login.form')->name('login.form'); 
