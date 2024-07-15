@@ -66,22 +66,22 @@ Route::resource('produtos', ProdutoController2::class);
 //     return redirect()->route('admin.cliente');
 // });
 
-Route::group([ //basicamente assim fica menos verboso 
-    'prefix' => 'admin',
-    'as' => 'admin.' //as substitui o name
-], function() { 
-    Route::get('/dashboard', function() { 
-        return "dashboard";
-    }); 
+// Route::group([ //basicamente assim fica menos verboso 
+//     'prefix' => 'admin',
+//     'as' => 'admin.' //as substitui o name
+// ], function() { 
+//     Route::get('/dashboard', function() { 
+//         return "dashboard";
+//     }); 
     
-    Route::get('/users', function() { 
-        return "users";  
-    });
+//     Route::get('/users', function() { 
+//         return "users";  
+//     });
     
-    Route::get('/cliente', function() { 
-        return "cliente";
-    }); //BASICAMENTE ESCREVE admin. antes do cliente, originalmente seria admin.cliente se não ter a primeira função
-});
+//     Route::get('/cliente', function() { 
+//         return "cliente";
+//     }); //BASICAMENTE ESCREVE admin. antes do cliente, originalmente seria admin.cliente se não ter a primeira função
+// });
 
 
 
