@@ -5,7 +5,7 @@ use App\Http\Controllers\ProdutoController; //tem que usar o namespace
 use App\Http\Controllers\ProdutoController2;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\CarrinhoController;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use App\Http\Controllers\CarrinhoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//aula 59 - rota do login
+Route::view('/login',  'login.form')->name('login.form'); 
+Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth'); 
 
 //aula 55 - atualizar carrinho
 Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('site.atualizacarrinho'); 
