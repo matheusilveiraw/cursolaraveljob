@@ -19,6 +19,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// aula 62 - logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+
+
 //aula 60 - rota dasboartd
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');

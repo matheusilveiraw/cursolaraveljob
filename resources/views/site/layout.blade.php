@@ -28,10 +28,16 @@
                             {{ Cart::getContent()->count() }}</span> </a></li>
             </ul>
 
+            @auth
             <ul id="nav-mobile" class="right">
                 <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Olá, {{ auth()->user()->firstName }} <i
                             class="material-icons right">expand_more</i> </a></li>
             </ul>
+            @else
+            <ul id="nav-mobile" class="right">
+                <li><a href="{{route('login.form')}}"> Login </a></li>
+            </ul>
+            @endauth
         </div>
     </nav>
 
@@ -46,6 +52,8 @@
     {{-- dropdown do usuario  --}}
     <ul id='dropdown2' class='dropdown-content'>
             <li><a href="{{ route('admin.dashboard')}}">Dashboard</a></li>
+            <li><a href="{{ route('login.logout')}}">Sair</a></li>
+
     </ul>
 
 

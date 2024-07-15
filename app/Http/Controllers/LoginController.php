@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
-    public function auth(Request $request)
-    {
+    public function auth(Request $request) {
 
         $credenciais = $request->validate([
             'email' => ['required', 'email'],
@@ -27,4 +26,11 @@ class LoginController extends Controller
             return redirect()->back()->with('erro', 'Usuário ou senha inválida.');
         }
     }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect(route('site.index'));
+     }
 }
