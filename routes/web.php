@@ -7,6 +7,7 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,15 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//aula 65
+
+Route::resource('users', UserController::class);
+Route::get('/register', [LoginController::class, 'create'])->name('login.create');
+//basicmente o /register é a rota, que vai no endereço da página 
+//o controller é onde o metodo vai estar, no caso o metodo é o create
+//o name é o nome que damos a rota
+
 
 // aula 62 - logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
