@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Produto;
 use App\Models\Categoria;
-
-
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -31,7 +30,22 @@ class SiteController extends Controller
     public function details($slug) { 
         $produto = Produto::where('slug', $slug)->first();
 
-        return view('site.details', compact('produto'));
+        if( Gate::allows('ver-produto', $produto) )  {
+            return view('site.details', compact('produto'));
+        }
+
+        // if(auth()->user()->can('ver-produto', $produto) )  {
+        //     return view('site.details', compact('produto'));
+        // } 
+
+        if(Gate::denies('ver-produto', $produto)) { 
+            return redirect()->route('site.index');
+        }
+
+        // if(auth()->user()->cannot('ver-produto', $produto) )  {
+        //     return view('site.details', compact('produto'));
+        // } 
+
     }
 
     public function categoria($id) { 
